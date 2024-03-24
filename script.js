@@ -40,7 +40,9 @@ function draw() {
   }
   if(mouse2 < 50) {
     if(mouseIsPressed){
+      obj1.spin();
       // spin object 2 by calling its spin() method
+      obj2.spin();
     } else {
       obj2.reset();
     }
@@ -64,6 +66,10 @@ function myClass(tempX, tempY){
   Create a spin method here. Look at the reset() method below and the spin() method from the Sakai example for this week.
   the function assigned to this.spin should take a number argument; that number should be _added_ to the value of this.angle. The reset() method sets this.angle back to 0, and this.scale back to 1
   */
+ this.spin = function(){
+  this.angle += .02;
+  this.scale *= 0.9;
+ }
   
   this.reset = function(){
       this.angle = 0;
@@ -78,12 +84,15 @@ function myClass(tempX, tempY){
   
   The argument to rotate() should be "this.angle", which is affected by the spin() and reset() methods
 */
-    
+    Push();
+    Translate(this.x, this.y);
+    rotate(this.angle);
+    scale(this.scale);
     fill(this.color);
     rectMode(CENTER);
     // change the location to 0, 0
-    rect(this.x, this.y, this.diam, this.diam);
-    
+    rect(0, 0, this.diam, this.diam);
+    Pop();
   }
   
 }
