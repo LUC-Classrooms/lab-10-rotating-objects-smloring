@@ -92,7 +92,7 @@ function myClass(tempX, tempY){
     rectMode(CENTER);
     // change the location to 0, 0
     rect(0, 0, this.diam, this.diam);
-    Pop();
+    pop();
   }
   
 }
