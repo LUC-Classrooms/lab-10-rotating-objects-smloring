@@ -84,8 +84,8 @@ function myClass(tempX, tempY){
   
   The argument to rotate() should be "this.angle", which is affected by the spin() and reset() methods
 */
-    Push();
-    Translate(this.x, this.y);
+    push();
+    translate(this.x, this.y);
     rotate(this.angle);
     scale(this.scale);
     fill(this.color);
